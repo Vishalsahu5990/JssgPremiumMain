@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MvvmTest.Views.MembersPage"
+    xmlns:i18n="clr-namespace:MvvmTest;assembly=MvvmTest"
+    xmlns:d="clr-namespace:MvvmTest.Views" 
+    xmlns:control="clr-namespace:MvvmTest.CustomRenderer"
+    xmlns:userControls="clr-namespace:MvvmTest.UserControls"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+     xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+  
+    BackgroundColor="#EBEBEB">
+    <Grid RowSpacing="0" BackgroundColor="Transparent">
+        <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <userControls:CustomNavigationBar/>
+        <SearchBar Grid.Row="1" BackgroundColor="#EBEBEB"
+            TextColor="Black"
+        CancelButtonColor="#909090"
+        Placeholder="Search..."
+        Margin="0,7,0,0"
+        SearchCommand="{Binding SearchCommand}"
+        x:Name="searchBar"/>
+
+        
+        <!--<flv:FlowListView 
+           Grid.Row="2" x:Name="listView"
+            HasUnevenRows="false"
+            Margin="6"
+            BackgroundColor="Transparent"
+            SeparatorVisibility="None"
+            FlowItemsSource="{Binding Items}"
+            RowHeight="130"
+            FlowColumnCount="1">
+                          <flv:FlowListView.FlowColumnTemplate >
+                
+            <DataTemplate>
+           
+                <Frame HasShadow="false" BackgroundColor="White" 
+                            Margin="5"
+                            Padding="0">
+                        <StackLayout Orientation="Horizontal" Spacing="5" Padding="10" HeightRequest="140" BackgroundColor="White" VerticalOptions="Start">
+       <ffimageloading:CachedImage Source="{Binding memPhoto}"
+                       ErrorPlaceholder="demo"
+                                HeightRequest="140"
+        Aspect="AspectFit"
+        WidthRequest="120"/>
+       <Grid HorizontalOptions="FillAndExpand" ColumnSpacing="5">
+            <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="90"/>
+            <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+        <StackLayout Padding="5"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+        <Label Text="{Binding memName}" HorizontalTextAlignment="Start" 
+                                        VerticalOptions="EndAndExpand"
+                                        FontAttributes="Bold"
+                                        LineBreakMode="TailTruncation"/>
+            </StackLayout>
+             <StackLayout Padding="5,0,0,5"  HeightRequest="40"
+                                        Grid.Row="1" Grid.Column="0">
+                <StackLayout Orientation="Horizontal">
+                <Image Source="mobile"/>
+                    <Label Text="MOBILE" FontSize="12"
+                                            />
+                </StackLayout>
+                 <Label Text="{Binding memMobile}" TextColor="#01C9BE" FontSize="12" Margin="3,12,0,0"
+                                    />
+             
+            </StackLayout>
+             <StackLayout Padding="0,0,5,5"  HeightRequest="40"
+                                        Grid.Row="1" Grid.Column="1">
+              <StackLayout Orientation="Horizontal">
+                <Image Source="blood_group"/>
+                    <Label Text="BLOOD GROUP" FontSize="12" />
+                </StackLayout>
+                 <Label Text="{Binding memBG}" TextColor="#01C9BE" FontSize="12" Margin="3,5,0,0"/>
+            </StackLayout>
+        </Grid>
+        </StackLayout></Frame>
+                        
+                         
+                    </DataTemplate>
+            </flv:FlowListView.FlowColumnTemplate> 
+                
+            </flv:FlowListView >-->
+    <control:ExtendedListView 
+           Grid.Row="2" x:Name="listView"
+            HasUnevenRows="false"
+            Margin="6"
+            BackgroundColor="Transparent"
+            SeparatorVisibility="None"
+            ItemsSource="{Binding Items}"
+            RowHeight="130"
+            ScrollingEnabled="true"
+            ShowScroller="true">
+                              <control:ExtendedListView.ItemTemplate>
+            <DataTemplate>
+            <ViewCell>
+                <Frame HasShadow="false" BackgroundColor="White" 
+                            Margin="5"
+                            Padding="0">
+                        <StackLayout Orientation="Horizontal" Spacing="5" Padding="10" HeightRequest="140" BackgroundColor="White" VerticalOptions="Start">
+       <ffimageloading:CachedImage Source="{Binding memPhoto}"
+                       ErrorPlaceholder="demo"
+                                HeightRequest="140"
+        Aspect="AspectFit"
+        WidthRequest="120"/>
+       <Grid HorizontalOptions="FillAndExpand" ColumnSpacing="5">
+            <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="90"/>
+            <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+        <StackLayout Padding="5"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+        <Label Text="{Binding memName}" HorizontalTextAlignment="Start" 
+                                        VerticalOptions="EndAndExpand"
+                                        FontAttributes="Bold"
+                                        LineBreakMode="TailTruncation">
+                                            
+                                        <Label.FontSize>
+                                        <OnPlatform x:TypeArguments="x:Double"
+                      iOS="13"
+                      Android="16"/>
+                                            </Label.FontSize>
+                                        </Label>
+            </StackLayout>
+             <StackLayout Padding="5,0,0,5"  HeightRequest="40"
+                                        Grid.Row="1" Grid.Column="0">
+                <StackLayout Orientation="Horizontal">
+                <Image Source="mobile" VerticalOptions="Start"/>
+                    <Label Text="MOBILE" FontSize="12"
+                                            >
+                                             <Label.FontSize>
+                                        <OnPlatform x:TypeArguments="x:Double"
+                      iOS="10"
+                      Android="12"/>
+                                            </Label.FontSize>          </Label>
+                </StackLayout>
+                 <Label Text="{Binding memMobile}" 
+                                            TextColor="#01C9BE"
+                                            FontSize="12" Margin="3,12,0,0"
+                                    >
+                                           <Label.FontSize>
+                                        <OnPlatform x:TypeArguments="x:Double"
+                      iOS="10"
+                      Android="12"/>
+                                            </Label.FontSize>   </Label>
+             
+            </StackLayout>
+             <StackLayout Padding="0,0,5,5"  HeightRequest="40"
+                                        Grid.Row="1" Grid.Column="1">
+              <StackLayout Orientation="Horizontal">
+                <Image Source="blood_group" VerticalOptions="Start"/>
+                    <Label Text="BLOOD GROUP" FontSize="12" >
+
+                                           <Label.FontSize>
+                                        <OnPlatform x:TypeArguments="x:Double"
+                      iOS="10"
+                      Android="12"/>
+                                            </Label.FontSize> 
+                                            </Label>
+                </StackLayout>
+                 <Label Text="{Binding memBG}" TextColor="#01C9BE" FontSize="12"
+                                        Margin="3,5,0,0">
+
+                                          <Label.FontSize>
+                                        <OnPlatform x:TypeArguments="x:Double"
+                      iOS="10"
+                      Android="12"/>
+                                            </Label.FontSize> 
+                                            <Label.Margin>
+                                             <OnPlatform x:TypeArguments="Thickness"
+                      iOS="3,0,0,0"
+                      Android="3,5,0,0"/>
+                                            </Label.Margin>
+                                        </Label>
+            </StackLayout>
+        </Grid>
+        </StackLayout></Frame>
+                        
+                          </ViewCell>  
+                    </DataTemplate>
+            </control:ExtendedListView.ItemTemplate>
+                
+            </control:ExtendedListView>
+        
+    <userControls:AdvertiseView Grid.Row="3" VerticalOptions="EndAndExpand"/>
+    </Grid>
+</d:BaseContentPage> 

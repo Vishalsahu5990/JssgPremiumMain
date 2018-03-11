@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="MvvmTest.Views.HomePage" 
+    xmlns:d="clr-namespace:MvvmTest.Views" 
+    xmlns:userControls="clr-namespace:MvvmTest.UserControls"
+    xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
+   <Grid>
+        <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <userControls:CustomNavigationBar 
+            Grid.Row="0"
+        HomeClicked="Handle_OnHomeClicked" MenuClicked="Handle_OnMenuClicked"/>
+        <flv:FlowListView Grid.Row="1" 
+            IsVisible="true" Margin="0,5,0,0"
+            BackgroundColor="Transparent"
+            SeparatorVisibility="None" 
+            HasUnevenRows="true"
+            x:Name="flowListView"
+            FlowItemsSource="{Binding GalleryList}"
+            FlowColumnMinWidth="160">
+            <flv:FlowListView.FlowColumnTemplate>
+                <DataTemplate>
+                    <Grid Padding="3" ColumnSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <StackLayout  HorizontalOptions="FillAndExpand">
+                            <ffimageloading:CachedImage
+                                                            Aspect="AspectFill" 
+                                                            DownsampleToViewSize="true"
+                                                            Source="{Binding galleryPhoto}" 
+                                                            HorizontalOptions="FillAndExpand"
+                                DownsampleHeight="200"
+                                DownsampleWidth="200"
+                            HeightRequest="180"
+                            ErrorPlaceholder="demo"
+                            /> 
+                           <Label Text="{Binding meetingName}"
+                            HorizontalTextAlignment="Center"
+                            HorizontalOptions="CenterAndExpand"
+                            FontSize="Medium"/>                                 
+                        </StackLayout>
+                    </Grid>
+                </DataTemplate>
+            </flv:FlowListView.FlowColumnTemplate>
+        </flv:FlowListView>
+        <userControls:AdvertiseView Grid.Row="2" VerticalOptions="EndAndExpand"/>
+    </Grid>
+</d:BaseContentPage>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{061296F3-622C-4908-90AC-8FC19EFCF99C}</ProjectGuid>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <UseMSBuildEngine>true</UseMSBuildEngine>
+    <OutputType>Library</OutputType>
+    <RootNamespace>PortableLibrary</RootNamespace>
+    <AssemblyName>PortableLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="APIRepository\APIRepository.cs" />
+    <Compile Include="Interface\IAPIRepository.cs" />
+    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\ErrorResponse.cs" />
+    <Compile Include="ServiceProvider\APIServices.cs" />
+    <Compile Include="Helper\Parse.cs" />
+    <Compile Include="Helper\JSONConvertor.cs" />
+    <Compile Include="Helper\URL.cs" />
+    <Compile Include="Helper\HttpClientHelper.cs" />
+    <Compile Include="Helper\CommonUtility.cs" />
+    <Compile Include="Models\CircularModel.cs" />
+    <Compile Include="Models\BearersModel.cs" />
+    <Compile Include="Models\GroupIntroModel.cs" />
+    <Compile Include="Models\PanchangModel.cs" />
+    <Compile Include="Models\ChokadiyaModel.cs" />
+    <Compile Include="Models\TirthModel.cs" />
+    <Compile Include="Models\ImportantModel.cs" />
+    <Compile Include="Models\MemberModel.cs" />
+    <Compile Include="Models\SliderModel.cs" />
+    <Compile Include="Models\MembersDetailsModel.cs" />
+    <Compile Include="Models\Food.cs" />
+    <Compile Include="Models\GalleryModel.cs" />
+    <Compile Include="Models\BirthdayListModel.cs" />
+    <Compile Include="Models\NewsModel.cs" />
+    <Compile Include="Models\WeeklyUpdatesModel.cs" />
+    <Compile Include="Models\AnniversaryModel.cs" />
+    <Compile Include="Models\BloodGroupModel.cs" />
+    <Compile Include="Models\ChangePasswordModel.cs" />
+    <Compile Include="Models\NotificationModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net45+win8+wpa81\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net45+win8+wpa81\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="ModernHttpClient">
+      <HintPath>..\packages\modernhttpclient.2.4.2\lib\Portable-Net45+WinRT45+WP8+WPA81\ModernHttpClient.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Helper\" />
+    <Folder Include="APIRepository\" />
+    <Folder Include="Interface\" />
+    <Folder Include="Models\" />
+    <Folder Include="ServiceProvider\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+</Project>

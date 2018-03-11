@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MvvmTest.Views.PanchangAndChoghadiyaPage"
+      xmlns:d="clr-namespace:MvvmTest.Views" 
+   xmlns:userControls="clr-namespace:MvvmTest.UserControls"
+    BackgroundColor="#EBEBEB"
+    xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
+   <Grid>
+        <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="70"/>
+        </Grid.RowDefinitions>
+        
+        <userControls:CustomNavigationBar 
+            Grid.Row="0"
+       />
+       <StackLayout BackgroundColor="#20CBC2" 
+            Margin="10,7,10,7"
+            Grid.Row="1"
+            Padding="1">
+            <Grid ColumnSpacing="0" HeightRequest="70">
+            <StackLayout Grid.Column="0" x:Name="sljainTirth"
+                    >
+                     <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Jain_Tapped" />
+                </StackLayout.GestureRecognizers>
+            <Label  Text="PANCHANG" HorizontalTextAlignment="Center"
+                    VerticalOptions="CenterAndExpand"
+                    FontSize="15"
+                    x:Name="lblJainTirth"/>
+                </StackLayout>
+                <StackLayout
+                    x:Name="slImpNumber"
+                
+                    Grid.Column="1">
+                    <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Imp_Tapped" />
+                </StackLayout.GestureRecognizers>
+<Label Text="CHOGHADIYA" HorizontalTextAlignment="Center"
+                    VerticalOptions="CenterAndExpand"                       
+                        x:Name="lblImpNumber"
+                        FontSize="15"
+                    />
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+        <ContentView x:Name="cvJain" Grid.Row="2" 
+             >
+         <ListView x:Name="listViewImp"
+            HasUnevenRows="true"
+                BackgroundColor="Transparent"
+                SeparatorVisibility="None" 
+                ItemsSource="{Binding PanchangList}"
+                Margin="0,12,0,0">
+            <ListView.ItemTemplate>
+            <DataTemplate>
+            <ViewCell> <StackLayout>
+            <StackLayout BackgroundColor="#21CABF" HeightRequest="50">
+            <Label Text="{Binding month}"
+            TextColor="White"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center"
+                VerticalOptions="CenterAndExpand"/>
+            </StackLayout>
+            <ffimageloading:CachedImage
+                                HeightRequest="250"
+                                HorizontalOptions="FillAndExpand"
+                                Source="{Binding panchangPhoto}"
+                                DownsampleToViewSize="true"/>
+       
+        </StackLayout>
+                        </ViewCell>
+                            
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ContentView>
+        <ContentView x:Name="cvImp" Grid.Row="2" 
+            Margin="10,0,10,0">
+        <StackLayout Spacing="0">       
+    <ListView x:Name="listViewjain"
+            HasUnevenRows="true"
+                BackgroundColor="Transparent"
+                SeparatorVisibility="None"
+                    ItemsSource="{Binding ChoghadiyaList}"
+                >
+            <ListView.ItemTemplate>
+            <DataTemplate>
+            <ViewCell> 
+                               <StackLayout>
+            <StackLayout BackgroundColor="#21CABF" HeightRequest="50">
+            <Label Text="DIN KA CHOGHADIYA"
+            TextColor="White"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center"
+                VerticalOptions="CenterAndExpand"/>
+            </StackLayout>
+            <ffimageloading:CachedImage
+                                HeightRequest="220"
+                                HorizontalOptions="FillAndExpand"
+                                Source="{Binding dayChokadiya}"
+
+                                    DownsampleToViewSize="true"/>
+
+                                     <StackLayout BackgroundColor="#21CABF" HeightRequest="50">
+            <Label Text="RAAT KA CHOGHADIYA"
+            TextColor="White"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center"
+                VerticalOptions="CenterAndExpand"/>
+            </StackLayout>
+            <ffimageloading:CachedImage
+                                HeightRequest="220"
+                                HorizontalOptions="FillAndExpand"
+                                Source="{Binding nightChokadiya}"
+                                DownsampleToViewSize="true"/>
+       
+        </StackLayout>
+                        </ViewCell>
+                            
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+             
+           </StackLayout> 
+        </ContentView>
+        <userControls:AdvertiseView Grid.Row="3"
+        VerticalOptions="EndAndExpand"
+        />
+    </Grid>
+</d:BaseContentPage>

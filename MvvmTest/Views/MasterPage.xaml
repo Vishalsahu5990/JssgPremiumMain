@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="MvvmTest.Views.MasterPage"
+    Icon="menu.png"
+    Title="menu"
+    BackgroundColor="White">
+
+           <Grid BackgroundColor="Transparent" Margin="0" Padding="0,0,0,0">
+                <Grid.RowDefinitions>
+                <RowDefinition Height="120"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+        <StackLayout>
+        <StackLayout Grid.Row="0" Orientation="Horizontal" Padding="16,0,16,0" VerticalOptions="Start">
+        <Image Source="logo_2"
+                       HeightRequest="110"
+        WidthRequest="120"
+        Aspect="AspectFit" 
+        x:Name="imgUser"/>
+                
+            <StackLayout VerticalOptions="CenterAndExpand" >
+            <Label  
+                    VerticalTextAlignment="Center"
+                    x:Name="lblUserName"
+                    FontSize="Medium"
+                    FontAttributes="Bold"/>
+                <Label Text="Vice President"
+                VerticalTextAlignment="Center"
+                    IsVisible="false" 
+                    />
+            </StackLayout> 
+
+        </StackLayout>
+        <BoxView Margin="16,0,0,0" HeightRequest="1" BackgroundColor="Silver"/>
+            </StackLayout>
+            
+
+        <ListView x:Name="listview" SeparatorVisibility="None" Grid.Row="1">
+        <ListView.ItemTemplate>
+        <DataTemplate>
+        <ViewCell>
+        <Grid Padding="5,5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="60"/>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Image Source="{Binding IconSource}" 
+                                VerticalOptions="CenterAndExpand"/>
+                            <Label Grid.Column="1" Text="{Binding Title}" 
+                                VerticalTextAlignment="Center"
+                                VerticalOptions="CenterAndExpand"
+                                FontAttributes="Bold"/>
+                        </Grid>
+                    </ViewCell>
+                        
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    
+    <StackLayout Grid.Row="2" HeightRequest="50" BackgroundColor="Silver" Opacity="0.6" VerticalOptions="EndAndExpand">
+     <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Logout_Tapped" />
+                </StackLayout.GestureRecognizers>
+            <Label Text="LOGOUT" VerticalTextAlignment="Center"
+            VerticalOptions="CenterAndExpand"
+            HorizontalTextAlignment="Center"
+            TextColor="#008E7B"/>
+                    </StackLayout>
+            </Grid>
+       
+</ContentPage>

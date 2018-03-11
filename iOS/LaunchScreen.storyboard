@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" launchScreen="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="393" image="splash.png">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icReportInjectionPin.png" width="39" height="55"/>
+        <image name="icLeftArrow.png" width="12" height="17"/>
+        <image name="icReportInjection.png" width="28" height="28"/>
+        <image name="bg.png" width="375" height="667"/>
+        <image name="DashedImage.png" width="35" height="35"/>
+        <image name="calendar.png" width="375" height="382"/>
+        <image name="schedule.png" width="375" height="44"/>
+        <image name="icBackPurple.png" width="13" height="22"/>
+        <image name="icLeft.png" width="24" height="24"/>
+        <image name="icRight.png" width="24" height="24"/>
+        <image name="circle.png" width="32" height="32"/>
+        <image name="anniversary.png" width="15" height="15"/>
+        <image name="blood_group_list.png" width="15" height="15"/>
+        <image name="blood_group.png" width="7" height="10"/>
+        <image name="feedback.png" width="15" height="15"/>
+        <image name="gallery.png" width="33" height="27"/>
+        <image name="group_intro.png" width="33" height="27"/>
+        <image name="home.png" width="20" height="20"/>
+        <image name="logo_1.png" width="206" height="190"/>
+        <image name="logo_2.png" width="210" height="144"/>
+        <image name="members.png" width="33" height="27"/>
+        <image name="menu.png" width="20" height="20"/>
+        <image name="mobile.png" width="7" height="10"/>
+        <image name="news.png" width="15" height="15"/>
+        <image name="next_arrow.png" width="10" height="18"/>
+        <image name="notification_icon.png" width="15" height="15"/>
+        <image name="notification.png" width="15" height="15"/>
+        <image name="office_bearers.png" width="33" height="27"/>
+        <image name="panchang.png" width="15" height="15"/>
+        <image name="refresh.png" width="14" height="14"/>
+        <image name="search.png" width="14" height="14"/>
+        <image name="splash_bg.jpg" width="640" height="1136"/>
+        <image name="splash_bg_ip6s.jpg" width="1242" height="2208"/>
+        <image name="useful_info.png" width="15" height="15"/>
+        <image name="weekly_update.png" width="15" height="15"/>
+        <image name="login_button.png" width="316" height="80"/>
+        <image name="birthday.png" width="15" height="15"/>
+        <image name="demo.png" width="341" height="203"/>
+        <image name="rightArrow.png" width="32" height="32"/>
+        <image name="downArrow.png" width="32" height="32"/>
+        <image name="change_pwd.png" width="15" height="15"/>
+        <image name="splash.png" width="1080" height="1920"/>
+    </resources>
+</document>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MvvmTest.Views.NotificationDetalPage"
+     xmlns:i18n="clr-namespace:MvvmTest;assembly=MvvmTest"
+    xmlns:d="clr-namespace:MvvmTest.Views" 
+    xmlns:control="clr-namespace:MvvmTest.CustomRenderer"
+    xmlns:userControls="clr-namespace:MvvmTest.UserControls"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    >
+	<StackLayout Spacing="0">
+    <userControls:CustomNavigationBar />  
+         <ScrollView>
+            <StackLayout>
+      <StackLayout Orientation="Vertical" Spacing="10" Padding="50,25,50,0">
+      <ffimageloading:CachedImage 
+                    HeightRequest="160"
+            Aspect="AspectFit"
+            HorizontalOptions="FillAndExpand"
+                DownsampleToViewSize="true"
+                    x:Name="imgMember"/>
+            <Label 
+            HorizontalTextAlignment="Center"
+            HorizontalOptions="CenterAndExpand"
+            FontSize="20"
+                    Margin="0,30,0,0"
+                    x:Name="lblName"
+                    FontAttributes="Bold"
+                    TextColor="Black"/>
+            <!--monthlyGathering-->
+            <Label 
+            VerticalTextAlignment="Center"
+            FontSize="16" 
+            TextColor="#21CABF"
+            HorizontalTextAlignment="Center"
+                    x:Name="lblMobile"/>
+    </StackLayout>
+        <!-- <BoxView HeightRequest="1" BackgroundColor="Silver"
+        Margin="20,0,20,10"/>
+     
+       <Label
+            Text="{Binding Description}"
+            HorizontalTextAlignment="Start"
+            Margin="25,0,25,0"
+            TextColor="Gray"/>-->
+                <Image Source="flower" HorizontalOptions="FillAndExpand"
+                Margin="0,10,0,0"
+                HeightRequest="120"/>
+                </StackLayout>
+        </ScrollView>
+       
+        <userControls:AdvertiseView VerticalOptions="EndAndExpand"/>
+    </StackLayout>
+</d:BaseContentPage>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MvvmTest.UserControls.AdvertiseView"
+     xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+    >
+	<cv:CarouselViewControl ItemsSource="{Binding Images}" x:Name="carouselSlider" 
+                HeightRequest="70"
+                BackgroundColor="Transparent"
+                HorizontalOptions="FillAndExpand"
+                IndicatorsTintColor="Aqua"
+                ShowIndicators="false">
+    <cv:CarouselViewControl.ItemTemplate>
+      <DataTemplate>
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+          </Grid.RowDefinitions>
+          <Image Grid.RowSpan="2" Aspect="AspectFill"
+                    Source="{Binding sliderPhoto}">
+                    <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="SliderImage_Tapped" />
+                </StackLayout.GestureRecognizers>
+                    </Image>
+        </Grid>
+      </DataTemplate>
+    </cv:CarouselViewControl.ItemTemplate>
+  </cv:CarouselViewControl>
+</Grid>

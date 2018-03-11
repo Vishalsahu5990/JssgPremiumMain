@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="MvvmTest.Views.GroupIntroductionPage"
+     xmlns:i18n="clr-namespace:MvvmTest;assembly=MvvmTest"
+    xmlns:d="clr-namespace:MvvmTest.Views"
+    xmlns:control="clr-namespace:MvvmTest.CustomRenderer"
+    xmlns:userControls="clr-namespace:MvvmTest.UserControls">
+	<StackLayout Spacing="0">
+    <userControls:CustomNavigationBar />  
+         <ScrollView>
+            <StackLayout>
+      <StackLayout Orientation="Horizontal" Spacing="15" Padding="30,25,30,10">
+      <Image Source="logo_2"
+            HeightRequest="100" 
+            Aspect="AspectFit"
+            HorizontalOptions="CenterAndExpand"/>
+           
+
+        </StackLayout>
+        <BoxView HeightRequest="1" BackgroundColor="Silver"
+        Margin="20,0,20,15"/>
+       
+        <Label
+            Text="{Binding Description}" 
+                    HorizontalTextAlignment="Start"
+            Margin="25,0,25,0"
+            TextColor="Gray"
+                FontSize="14"/>
+                </StackLayout>
+        </ScrollView>
+        <userControls:AdvertiseView VerticalOptions="EndAndExpand"/>
+    </StackLayout>
+</d:BaseContentPage>

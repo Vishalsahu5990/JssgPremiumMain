@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="MvvmTest.Views.NewsPage"
+    xmlns:d="clr-namespace:MvvmTest.Views"
+    xmlns:userControls="clr-namespace:MvvmTest.UserControls">
+	  
+  <StackLayout Spacing="0" BackgroundColor="#EBEBEB">
+       <userControls:CustomNavigationBar />       
+
+            <ListView x:Name="listView"
+            HasUnevenRows="true"
+                BackgroundColor="Transparent"
+                SeparatorVisibility="None"
+            ItemsSource="{Binding NewsList}"
+            Margin="0,12,0,0">
+            <ListView.ItemTemplate>
+            <DataTemplate>
+            <ViewCell>
+                           <Frame  HasShadow="false"
+                                BackgroundColor="White"
+                                Margin="5"
+                            Padding="4">
+       <StackLayout Orientation="Horizontal">
+       <Image Source="{Binding title_pic}" HeightRequest="80"
+                        WidthRequest="100"
+                        Aspect="AspectFill"
+VerticalOptions="Start"
+                   IsVisible="false" />
+                    <StackLayout Padding="12" HorizontalOptions="FillAndExpand">
+                    <Label Text="{Binding title}"
+                                        FontSize="16"
+                       LineBreakMode="TailTruncation" />
+                        <Label Text="{Binding description}" 
+                                        FontSize="12"
+                        TextColor="#909090"
+                                   />
+                <Label Text="PUBLISHED ON"
+                    Margin="0,10,0,0"
+                TextColor="Silver"
+                 FontSize="Small"
+                  IsVisible="false"/>
+                <Label Text="{Binding added_on}" 
+                TextColor="#01C9BE"
+                FontSize="Small"
+                 IsVisible="false"/>
+                
+
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+                        </ViewCell>
+                            
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+       
+        
+
+        </StackLayout>
+</d:BaseContentPage>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="MvvmTest.Popups.GalleryPopupPage"
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
+	<StackLayout
+            Orientation="Vertical" 
+            VerticalOptions="FillAndExpand"
+        HorizontalOptions="FillAndExpand"
+            BackgroundColor="Transparent"
+        x:Name="slMainLayout"
+        Margin="20,30,20,30"
+        >
+        <StackLayout HeightRequest="50" HorizontalOptions="FillAndExpand">
+        <Image Source="cross" HorizontalOptions="EndAndExpand">
+         <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Cross_Tapped" />
+                </Image.GestureRecognizers>
+            </Image>
+        </StackLayout>
+
+        <ffimageloading:CachedImage 
+            Aspect="AspectFit"
+           x:Name="imgGallery"
+        VerticalOptions="CenterAndExpand"/>
+    </StackLayout>
+</pages:PopupPage>

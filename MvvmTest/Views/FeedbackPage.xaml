@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="MvvmTest.Views.FeedbackPage"
+    xmlns:i18n="clr-namespace:MvvmTest;assembly=MvvmTest"
+    xmlns:d="clr-namespace:MvvmTest.Views"
+    xmlns:control="clr-namespace:MvvmTest.CustomRenderer" 
+    xmlns:userControls="clr-namespace:MvvmTest.UserControls"
+    BackgroundColor="#EBEBEB">
+    <StackLayout>
+            <userControls:CustomNavigationBar
+            />  
+    <ScrollView>
+    <StackLayout>
+    
+        <StackLayout Grid.Row="1"  Margin="16">
+         <Label Text="Please share your feedback or suggestions"
+        HorizontalTextAlignment="Center"
+            TextColor="#2BAB98">
+        </Label>
+        <BoxView BackgroundColor="Silver" 
+        WidthRequest="150"
+            HeightRequest="1"
+            HorizontalOptions="Center"/>
+        </StackLayout>
+           <StackLayout   Margin="16">
+            <Label Text="SUBJECT" HorizontalTextAlignment="Start"
+                FontAttributes="Bold"/>
+           <StackLayout HeightRequest="40"
+                BackgroundColor="Silver"
+                Padding="1"
+                       >
+                <control:ExtendedEntry 
+                BackgroundColor="White" 
+                PlaceholderColor="Silver"
+                Placeholder=" Enter the subject"
+                HorizontalOptions="FillAndExpand"
+                FontSize="Small"
+                HeightRequest="40"
+                x:Name="txtSubject"
+                Margin="0,0,0,0"/>
+            </StackLayout>  
+            <Label Text="FEEDBACK" HorizontalTextAlignment="Start"
+                FontAttributes="Bold">
+            </Label>
+            <StackLayout HeightRequest="150"
+                BackgroundColor="Silver"
+                Padding="1"
+                 Margin="0,15,0,0"> 
+                <control:PlaceholderEditor 
+                Placeholder="Your feedback"
+                PlaceholderColor="Silver"
+                BackgroundColor="White"
+                HorizontalOptions="FillAndExpand"
+                HeightRequest="150"
+                FontSize="Small"
+                x:Name="txtFeedback"
+                       /> 
+
+            </StackLayout> 
+             <control:ExtendedButton 
+                            Clicked="Handle_Clicked"
+                            BackgroundColor="#009E93"
+                            TextColor="White" Margin="0,25,0,0" 
+                            HorizontalOptions="FillAndExpand" 
+                 BorderRadius="20"
+                        Text="SUBMIT FEEDBACK"
+                        HeightRequest="40"
+                        VerticalOptions="FillAndExpand"/>
+        </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    
+        <userControls:AdvertiseView
+        Grid.Row="2"
+        VerticalOptions="EndAndExpand"
+        HeightRequest="70"/>
+    </StackLayout>
+</d:BaseContentPage>

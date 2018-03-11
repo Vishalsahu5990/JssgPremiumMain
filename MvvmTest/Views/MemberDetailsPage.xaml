@@ -1,0 +1,568 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MvvmTest.Views.MemberDetailsPage"
+     xmlns:control="clr-namespace:MvvmTest.CustomRenderer"
+    xmlns:i18n="clr-namespace:MvvmTest;assembly=MvvmTest"
+    xmlns:d="clr-namespace:MvvmTest.Views"
+    xmlns:userControls="clr-namespace:MvvmTest.UserControls"
+    BackgroundColor="#EBEBEB"
+      xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+  xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
+    <Grid>
+        <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <userControls:CustomNavigationBar Grid.Row="0"/>
+       <ScrollView Grid.Row="1">
+       <StackLayout VerticalOptions="Start">
+       <ffimageloading:CachedImage
+                    HeightRequest="160"
+            Aspect="AspectFit"
+            HorizontalOptions="FillAndExpand"
+                x:Name="imgMemberImage"
+                DownsampleToViewSize="true"/>
+                <Label 
+                HorizontalTextAlignment="Center"
+                x:Name="lblMemberName"
+                FontSize="20"
+                FontAttributes="Bold"/>
+
+                <Grid Margin="16,0,16,0" >
+                    <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                      <RowDefinition Height="2"/>  
+                    </Grid.RowDefinitions>
+                <Label Text="PRIMARY DETAILS"
+                HorizontalTextAlignment="Start"
+                        VerticalOptions="CenterAndExpand"
+                    FontSize="16"
+                    TextColor="Gray"
+                    Grid.Row="0"
+                    IsVisible="false"/>
+                    <BoxView HeightRequest="1"
+                    BackgroundColor="Silver"
+                    Grid.ColumnSpan="2"
+                    Grid.Row="1"
+                    VerticalOptions="EndAndExpand"/>
+                </Grid>
+
+                <Grid Margin="16,0,16,0">
+                    <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                      <RowDefinition Height="2"/>  
+                    </Grid.RowDefinitions>
+                <Label Text="Marriage Anniversary"
+                HorizontalTextAlignment="Start"
+                  VerticalOptions="CenterAndExpand"
+                    FontSize="12"
+                    TextColor="#01C9BE"
+                    Grid.Row="0"
+                    Grid.Column="0"/>
+                     <Label Text="19-05-2010"
+                        x:Name="lblmarriageAnniversary"
+                HorizontalTextAlignment="Start"
+                 VerticalOptions="CenterAndExpand"
+                    FontSize="12"
+                    TextColor="Gray"
+                    Grid.Row="0"
+                    Grid.Column="1"/>
+                    <BoxView HeightRequest="1"
+                    BackgroundColor="Silver"
+                    Grid.ColumnSpan="2"
+                    Grid.Row="1"
+                    VerticalOptions="EndAndExpand"/>
+                </Grid>
+
+                <Grid Margin="16,0,16,0">
+                    <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                      <RowDefinition Height="2"/>  
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120"/>
+                    </Grid.ColumnDefinitions>
+                <Label Text="Date of Birth"
+                HorizontalTextAlignment="Start"
+                  VerticalOptions="CenterAndExpand"
+                    FontSize="12"
+                    TextColor="#01C9BE"
+                    Grid.Row="0"
+                    Grid.Column="0"/>
+                     <StackLayout  Grid.Row="0"
+                    Grid.Column="1">
+                    <Label Text="Husband"
+                HorizontalTextAlignment="Start"
+                 VerticalOptions="CenterAndExpand"
+                    FontSize="12"
+                    TextColor="Gray"
+                   />
+                          <Label Text="Wife"
+                HorizontalTextAlignment="Start"
+                 VerticalOptions="CenterAndExpand"
+                    FontSize="12"
+                    TextColor="Gray"
+                   />
+                    </StackLayout>
+                     
+                     <StackLayout  Grid.Row="0"
+                    Grid.Column="2">
+                    <Label 
+                HorizontalTextAlignment="Start"
+                 VerticalOptions="CenterAndExpand"
+                    FontSize="12"
+                    TextColor="Gray"
+                            x:Name="lblHusbandDob"
+                   />
+                          <Label 
+                HorizontalTextAlignment="Start"
+                 VerticalOptions="CenterAndExpand"
+                    FontSize="12"
+                    TextColor="Gray"
+                  x:Name="lblWifeDob" />
+                    </StackLayout>
+                    <BoxView HeightRequest="1"
+                    BackgroundColor="Silver"
+                    Grid.ColumnSpan="3"
+                    Grid.Row="1"
+                    VerticalOptions="EndAndExpand"/>
+                </Grid>
+
+
+                <Grid Margin="16,0,16,0">
+                    <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                      <RowDefinition Height="2"/>  
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120"/>
+                    </Grid.ColumnDefinitions>
+                <Label Text="Occupation"
+                HorizontalTextAlignment="Start"
+                  VerticalOptions="CenterAndExpand"
+                    FontSize="12"
+                    TextColor="#01C9BE"
+                    Grid.Row="0"
+                    Grid.Column="0"/>
+                     <Label 
+                HorizontalTextAlignment="Start"
+                 VerticalOptions="CenterAndExpand"
+                    FontSize="12"
+                    TextColor="Gray"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    x:Name="lblOccupation"/>
+                    <BoxView HeightRequest="1"
+                    BackgroundColor="Silver"
+                    Grid.ColumnSpan="2"
+                    Grid.Row="1"
+                    VerticalOptions="EndAndExpand"/>
+                </Grid>
+
+                <Grid Margin="16,0,16,0">
+                    <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                      <RowDefinition Height="2"/>  
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120"/>
+                    </Grid.ColumnDefinitions>
+                <Label Text="Office Address"
+                HorizontalTextAlignment="Start"
+                  VerticalOptions="CenterAndExpand"
+                    FontSize="12"
+                    TextColor="#01C9BE"
+                    Grid.Row="0"
+                    Grid.Column="0"/>
+                     <Label 
+                HorizontalTextAlignment="Start"
+                 VerticalOptions="CenterAndExpand"
+                    FontSize="12"
+                    TextColor="Gray"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    x:Name="lblOfficeAddress"/>
+                    <BoxView HeightRequest="1"
+                    BackgroundColor="Silver"
+                    Grid.ColumnSpan="2"
+                    Grid.Row="1"
+                    VerticalOptions="EndAndExpand"/>
+                </Grid>
+
+                <Grid Margin="16,0,16,0">
+                    <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                      <RowDefinition Height="2"/>  
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120"/>
+                    </Grid.ColumnDefinitions>
+                <Label Text="Residential Address"
+                HorizontalTextAlignment="Start"
+                  VerticalOptions="CenterAndExpand"
+                    FontSize="12"
+                    TextColor="#01C9BE"
+                    Grid.Row="0"
+                    Grid.Column="0"/>
+                     <Label 
+                HorizontalTextAlignment="Start"
+                 VerticalOptions="CenterAndExpand"
+                    FontSize="12"
+                    TextColor="Gray"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    x:Name="lblResidentialAddress"/>
+                    <BoxView HeightRequest="1"
+                    BackgroundColor="Silver"
+                    Grid.ColumnSpan="2"
+                    Grid.Row="1"
+                    VerticalOptions="EndAndExpand"/>
+                </Grid>
+
+                <Grid Margin="16,0,16,0">
+                    <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                      <RowDefinition Height="2"/>  
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120"/>
+                    </Grid.ColumnDefinitions>
+                <Label Text="Office Contact No."
+                HorizontalTextAlignment="Start"
+                  VerticalOptions="CenterAndExpand"
+                    FontSize="12"
+                    TextColor="#01C9BE"
+                    Grid.Row="0"
+                    Grid.Column="0"/>
+                     <Label 
+                HorizontalTextAlignment="Start"
+                 VerticalOptions="CenterAndExpand"
+                    FontSize="12"
+                    TextColor="Gray"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    x:Name="lblOfficeContactNo"/>
+                    <BoxView HeightRequest="1"
+                    BackgroundColor="Silver"
+                    Grid.ColumnSpan="2"
+                    Grid.Row="1"
+                    VerticalOptions="EndAndExpand"/>
+                </Grid>
+
+                <Grid Margin="16,0,16,0">
+                    <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                      <RowDefinition Height="2"/>  
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120"/>
+                    </Grid.ColumnDefinitions>
+                <Label Text="Residence Contact No."
+                HorizontalTextAlignment="Start"
+                  VerticalOptions="CenterAndExpand"
+                    FontSize="12"
+                    TextColor="#01C9BE"
+                    Grid.Row="0"
+                    Grid.Column="0"/>
+                     <Label 
+                HorizontalTextAlignment="Start"
+                 VerticalOptions="CenterAndExpand"
+                    FontSize="12"
+                    TextColor="Gray"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    x:Name="lblResidenceContactNo"/>
+                    <BoxView HeightRequest="1"
+                    BackgroundColor="Silver"
+                    Grid.ColumnSpan="2"
+                    Grid.Row="1"
+                    VerticalOptions="EndAndExpand"/>
+                </Grid>
+
+                <Grid Margin="16,0,16,0">
+                    <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                      <RowDefinition Height="2"/>  
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120"/>
+                    </Grid.ColumnDefinitions>
+                <Label Text="Mobile No."
+                HorizontalTextAlignment="Start"
+                  VerticalOptions="CenterAndExpand"
+                    FontSize="12"
+                    TextColor="#01C9BE"
+                    Grid.Row="0"
+                    Grid.Column="0"/>
+                     <StackLayout  Grid.Row="0"
+                    Grid.Column="1">
+                    <Label Text="Husband"
+                HorizontalTextAlignment="Start"
+                 VerticalOptions="CenterAndExpand"
+                    FontSize="12"
+                    TextColor="Gray"
+                   />
+                          <Label Text="Wife"
+                HorizontalTextAlignment="Start"
+                 VerticalOptions="CenterAndExpand"
+                    FontSize="12"
+                    TextColor="Gray"
+                   />
+                    </StackLayout>
+                     
+                     <StackLayout  Grid.Row="0"
+                    Grid.Column="2">
+                    <Label 
+                HorizontalTextAlignment="Start"
+                 VerticalOptions="CenterAndExpand"
+                    FontSize="12"
+                    TextColor="Gray"
+                   x:Name="lblHusbandMobileNumber"/>
+                          <Label 
+                HorizontalTextAlignment="Start"
+                 VerticalOptions="CenterAndExpand"
+                    FontSize="12"
+                    TextColor="Gray"
+                  x:Name="lblWifeMobileNumber" />
+                    </StackLayout>
+                    <BoxView HeightRequest="1"
+                    BackgroundColor="Silver"
+                     Grid.ColumnSpan="3"
+                    Grid.Row="1"
+                    VerticalOptions="EndAndExpand"/>
+                </Grid>
+
+                <Grid Margin="16,0,16,0">
+                    <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                      <RowDefinition Height="2"/>  
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120"/>
+                    </Grid.ColumnDefinitions>
+                <Label Text="Email ID"
+                HorizontalTextAlignment="Start"
+                  VerticalOptions="CenterAndExpand"
+                    FontSize="12"
+                    TextColor="#01C9BE"
+                    Grid.Row="0"
+                    Grid.Column="0"/>
+                     <Label 
+                HorizontalTextAlignment="Start"
+                 VerticalOptions="CenterAndExpand"
+                    FontSize="12"
+                    TextColor="Gray"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    x:Name="lblEmail"/>
+                    <BoxView HeightRequest="1"
+                    BackgroundColor="Silver"
+                    Grid.ColumnSpan="2"
+                    Grid.Row="1"
+                    VerticalOptions="EndAndExpand"/>
+                </Grid>
+
+                <Grid Margin="16,0,16,0">
+                    <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                      <RowDefinition Height="2"/>  
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120"/>
+                    </Grid.ColumnDefinitions>
+                <Label Text="Website"
+                HorizontalTextAlignment="Start"
+                  VerticalOptions="CenterAndExpand"
+                    FontSize="12"
+                    TextColor="#01C9BE"
+                    Grid.Row="0"
+                    Grid.Column="0"/>
+                     <Label 
+                HorizontalTextAlignment="Start"
+                 VerticalOptions="CenterAndExpand"
+                    FontSize="12"
+                    TextColor="Gray"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    x:Name="lblWebsite"/>
+                    <BoxView HeightRequest="1"
+                    BackgroundColor="Silver"
+                    Grid.ColumnSpan="2"
+                    Grid.Row="1"
+                    VerticalOptions="EndAndExpand"/>
+                </Grid>
+
+                 <Grid Margin="16,0,16,0">
+                    <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                      <RowDefinition Height="2"/>  
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120"/>
+                    </Grid.ColumnDefinitions>
+                <Label Text="Blood Group"
+                HorizontalTextAlignment="Start"
+                  VerticalOptions="CenterAndExpand"
+                    FontSize="12"
+                    TextColor="#01C9BE"
+                    Grid.Row="0"
+                    Grid.Column="0"/>
+                     <StackLayout  Grid.Row="0"
+                    Grid.Column="1">
+                    <Label Text="Husband"
+                HorizontalTextAlignment="Start"
+                 VerticalOptions="CenterAndExpand"
+                    FontSize="12"
+                    TextColor="Gray"
+                   />
+                          <Label Text="Wife"
+                HorizontalTextAlignment="Start"
+                 VerticalOptions="CenterAndExpand"
+                    FontSize="12"
+                    TextColor="Gray"
+                   />
+                    </StackLayout>
+                     
+                     <StackLayout  Grid.Row="0"
+                    Grid.Column="2">
+                    <Label 
+                HorizontalTextAlignment="Start"
+                 VerticalOptions="CenterAndExpand"
+                    FontSize="12"
+                    TextColor="Gray"
+                   x:Name="lblBGHusband"/>
+                          <Label 
+                HorizontalTextAlignment="Start"
+                 VerticalOptions="CenterAndExpand"
+                    FontSize="12"
+                    TextColor="Gray"
+                   x:Name="lblBGWife"/>
+                    </StackLayout>
+                    <BoxView HeightRequest="1"
+                    BackgroundColor="Silver"
+                    Grid.ColumnSpan="3"
+                    Grid.Row="1"
+                    VerticalOptions="EndAndExpand"/>
+                </Grid>
+
+                 <StackLayout Margin="16,16,0,0" HorizontalOptions="FillAndExpand">
+                    
+                <Label Text="CHILD/CHILDREN DETAILS"
+                HorizontalTextAlignment="Start"
+                        VerticalOptions="CenterAndExpand"
+                    FontSize="16"
+                    TextColor="Gray"
+                    Grid.Row="0"/>
+                    <BoxView HeightRequest="1"
+                    BackgroundColor="Silver"
+                    Grid.ColumnSpan="2"
+                    Grid.Row="1"
+                    VerticalOptions="EndAndExpand"/>
+                </StackLayout> 
+
+                 <Grid Margin="16,0,16,0" IsVisible="false">
+                    <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                      <RowDefinition Height="2"/>  
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120"/>
+                    </Grid.ColumnDefinitions>
+                <Label Text="Name"
+                HorizontalTextAlignment="Start"
+                  VerticalOptions="CenterAndExpand"
+                    FontSize="12"
+                    TextColor="#01C9BE"
+                    Grid.Row="0"
+                    Grid.Column="0"/>
+                     <Label Text="N/A"
+                HorizontalTextAlignment="Start"
+                 VerticalOptions="CenterAndExpand"
+                    FontSize="12"
+                    TextColor="Gray"
+                    Grid.Row="0"
+                    Grid.Column="1"/>
+                    <BoxView HeightRequest="1"
+                    BackgroundColor="Silver"
+                    Grid.ColumnSpan="2"
+                    Grid.Row="1"
+                    VerticalOptions="EndAndExpand"/>
+                </Grid>
+
+
+
+                       <Grid Margin="15,10,10,0">
+        <Label Text="Name" Grid.Column="0"
+                                TextColor="#01C9BE"
+                                HorizontalTextAlignment="Start"
+        VerticalOptions="Center"
+        FontSize="13"/>
+         <Label Text="Age" Grid.Column="1" HorizontalTextAlignment="Start"
+        VerticalOptions="Center"
+        FontSize="13"
+          TextColor="#01C9BE"/>
+         <Label Text="Class" 
+            Grid.Column="2"
+            HorizontalTextAlignment="Start"
+            FontSize="13"
+        VerticalOptions="Center"
+                    TextColor="#01C9BE"/>
+    </Grid>
+        
+          <flv:FlowListView
+                    VerticalOptions="Start"
+            Grid.Row="1"
+            IsVisible="true" Margin="5,0,0,0" 
+            BackgroundColor="Transparent"
+            SeparatorColor="Silver"
+            HasUnevenRows="false"
+            SeparatorVisibility="Default"
+            RowHeight="60"
+            FlowItemsSource="{Binding child}"              
+             HeightRequest="210"
+              FlowColumnMinWidth="320"
+                    x:Name="listview">
+       <flv:FlowListView.FlowColumnTemplate> 
+            <DataTemplate>
+                     <StackLayout VerticalOptions="CenterAndExpand">
+                    <StackLayout 
+                        >
+
+                       
+                       <Grid Margin="10,20,10,10">
+        <Label Text="{Binding childName}" Grid.Column="0"
+                                
+                                HorizontalTextAlignment="Start"
+        VerticalOptions="Center"
+        FontSize="13"/>
+         <Label Text="{Binding childDOB}"
+            Grid.Column="1"
+            HorizontalTextAlignment="Start"
+        VerticalOptions="Center"
+        FontSize="13"
+         />
+         <Label Text="{Binding childClass}" 
+            Grid.Column="2"
+            HorizontalTextAlignment="Start"
+            FontSize="13"
+        VerticalOptions="Center"/>
+    </Grid>
+                        </StackLayout>
+                        </StackLayout>
+                  </DataTemplate>
+                 </flv:FlowListView.FlowColumnTemplate>
+           </flv:FlowListView>
+            </StackLayout>
+        </ScrollView>   
+          
+        
+    <userControls:AdvertiseView 
+        Grid.Row="2" 
+        VerticalOptions="EndAndExpand"/> 
+    </Grid>
+</d:BaseContentPage>

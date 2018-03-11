@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MvvmTest.Views.CircularPage"
+    xmlns:i18n="clr-namespace:MvvmTest;assembly=MvvmTest"
+    xmlns:d="clr-namespace:MvvmTest.Views" 
+    xmlns:control="clr-namespace:MvvmTest.CustomRenderer"
+    xmlns:userControls="clr-namespace:MvvmTest.UserControls"
+    BackgroundColor="#EBEBEB">
+	 <Grid>
+        <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/> 
+        </Grid.RowDefinitions>
+        <userControls:CustomNavigationBar Grid.Row="0"/>
+
+         <ListView Grid.Row="1" x:Name="listView" HasUnevenRows="true"
+            Margin="10"
+            SeparatorVisibility="None"
+            ItemsSource="{Binding CircularList}">
+            <ListView.ItemTemplate>
+            <DataTemplate>
+            <ViewCell>
+                      <StackLayout>
+            <StackLayout BackgroundColor="#21CABF" HeightRequest="50">
+            <Label Text="{Binding cirName}"
+            TextColor="White"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center"
+                VerticalOptions="CenterAndExpand"/>
+            </StackLayout>
+            <Label
+            Text="{Binding cirDesc}"
+            HorizontalTextAlignment="Start"
+            Margin="25"
+            TextColor="Gray"/>
+       
+        </StackLayout>
+                        </ViewCell>
+                            
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        
+        <userControls:AdvertiseView Grid.Row="2" VerticalOptions="EndAndExpand"/>
+    </Grid>
+</d:BaseContentPage>

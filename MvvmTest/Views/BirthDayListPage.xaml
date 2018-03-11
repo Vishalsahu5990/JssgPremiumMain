@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MvvmTest.Views.BirthDayListPage"
+     xmlns:d="clr-namespace:MvvmTest.Views"
+    xmlns:userControls="clr-namespace:MvvmTest.UserControls"
+       xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+    xmlns:control="clr-namespace:MvvmTest.CustomRenderer" >
+   <Grid>
+        <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+            <userControls:CustomNavigationBar
+            Grid.Row="0"
+            />  
+    <Grid Grid.Row="1" Margin="20,20,10,10" IsVisible="true" ColumnSpacing="10">
+        <Label Text="DATE" Grid.Column="0"
+                HorizontalTextAlignment="Start"
+        VerticalOptions="Center"
+        FontSize="13"
+            FontAttributes="Bold"/>
+         <Label Text="NAME" Grid.Column="1" HorizontalTextAlignment="Start"
+        VerticalOptions="Center"
+        FontSize="13"
+            FontAttributes="Bold"/>
+         <Label Text="MOBILE No." 
+            Grid.Column="2"
+            HorizontalTextAlignment="Start"
+            FontSize="13"
+        VerticalOptions="Center"
+            FontAttributes="Bold"/>
+    </Grid>
+     
+    <flv:FlowListView Grid.Row="2"
+                                IsVisible = "true"
+                                Margin="10,0,10,0"
+                                BackgroundColor="Transparent" 
+                                SeparatorVisibility="None"
+
+                                HasUnevenRows="true"
+                                x:Name="flowlistview"
+                                FlowItemsSource="{Binding GroupList}"
+                                FlowColumnMinWidth="320">
+                                <flv:FlowListView.FlowColumnTemplate>
+                                    <DataTemplate>  
+                                        <Grid Padding="3" ColumnSpacing="0">   
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                        <StackLayout> 
+                            <StackLayout  HeightRequest="60" BackgroundColor="#21CABF"
+                                Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                          <Label Text="{Binding month}"
+                                    HorizontalTextAlignment="Start"
+                                    HorizontalOptions="Start"
+                                VerticalOptions="CenterAndExpand"
+                                FontSize="18"
+                                TextColor="White"
+                                Margin="10,0,0,0"/>     
+                                            </StackLayout> 
+<!-- Inner Item cell-->
+                    <control:ExtendedListView
+                                IsVisible = "true"
+                                Margin="0,0,0,10"
+                                BackgroundColor="Transparent"  
+                                SeparatorVisibility="Default"
+                                SeparatorColor="Silver"
+                                HasUnevenRows="false"
+                                RowHeight="60"
+                                x:Name="flowlistviewChild"
+                                HeightRequest="{Binding ListHeight}"
+                                ItemsSource="{Binding Dates}"
+                                 ScrollingEnabled="false"
+            ShowScroller="false">
+
+                                 <control:ExtendedListView.ItemTemplate>
+            <DataTemplate>
+            <ViewCell>
+                                  
+                                        <Grid Padding="3" ColumnSpacing="0">   
+                                               <!-- <ColumnDefinit                                                                                           <RowDefinition Height="*" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+ion Width="*"/>
+                                            </Grid.ColumnDefinitions>
+ <Grid.RowDefinitions>-->
+                        <StackLayout HeightRequest="60"> 
+                            <Grid Margin="0,0,10,0" ColumnSpacing="10"
+                                                    HeightRequest="60">
+        <Label Text="{Binding merrageAnyver}" Grid.Column="0"
+                HorizontalTextAlignment="Start"
+        VerticalOptions="CenterAndExpand"
+        FontSize="13"
+TextColor="#01C9BE"/>
+         <Label Text="{Binding memName}"
+Grid.Column="1" HorizontalTextAlignment="Start"
+        VerticalOptions="CenterAndExpand"
+        FontSize="13"
+           Margin="10,0,0,0"
+                                                    TextColor="#01C9BE"/>
+         <Label Text="{Binding memMobile}" 
+            Grid.Column="2"
+            HorizontalTextAlignment="Start"
+            FontSize="13"
+        VerticalOptions="CenterAndExpand"
+         Margin="10,0,0,0"   />
+    </Grid>
+                                            </StackLayout>
+                                        </Grid>
+                                   </ViewCell>
+                                  </DataTemplate>          
+                                   </control:ExtendedListView.ItemTemplate>
+            
+                            </control:ExtendedListView>                 
+                             </StackLayout>
+                                        </Grid>
+                                    </DataTemplate>
+                                </flv:FlowListView.FlowColumnTemplate>
+                            </flv:FlowListView>
+
+        
+         <!-- <flv:FlowListView
+            Grid.Row="1"
+            IsVisible="true" Margin="0,5,0,0" 
+            BackgroundColor="Transparent"
+            SeparatorColor="Silver"
+            HasUnevenRows="false"
+            SeparatorVisibility="Default"
+            RowHeight="60"
+            FlowItemsSource="{Binding MemberList}"              
+             
+              FlowColumnMinWidth="320">
+       <flv:FlowListView.FlowColumnTemplate>
+            <DataTemplate>
+                     <StackLayout VerticalOptions="CenterAndExpand">
+                    <StackLayout 
+                        >
+
+                       
+                       <Grid Margin="10,20,10,10">
+        <Label Text="{Binding merrageAnyver}" Grid.Column="0"
+                                TextColor="#01C9BE"
+                                HorizontalTextAlignment="Start"
+        VerticalOptions="Center"
+        FontSize="13"/>
+         <Label Text="{Binding memName}" Grid.Column="1" HorizontalTextAlignment="Start"
+        VerticalOptions="Center"
+        FontSize="13"
+          TextColor="#01C9BE"/>
+         <Label Text="{Binding memMobile}" 
+            Grid.Column="2"
+            HorizontalTextAlignment="Start"
+            FontSize="13"
+        VerticalOptions="Center"/>
+    </Grid>
+                        </StackLayout>
+                        </StackLayout>
+                  </DataTemplate>
+                 </flv:FlowListView.FlowColumnTemplate>
+           </flv:FlowListView>-->
+      <userControls:AdvertiseView Grid.Row="3"/>
+        </Grid>
+</d:BaseContentPage >

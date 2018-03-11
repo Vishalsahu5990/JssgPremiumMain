@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MvvmTest.Views.LandingPage"
+    xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+    xmlns:control="clr-namespace:MvvmTest.CustomRenderer"
+    xmlns:i18n="clr-namespace:MvvmTest;assembly=MvvmTest"
+    xmlns:d="clr-namespace:MvvmTest.Views"
+    xmlns:userControls="clr-namespace:MvvmTest.UserControls"
+     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
+	
+        <StackLayout Spacing="0">
+       <userControls:CustomNavigationBar  
+        />       
+        <ScrollView>
+        <StackLayout BackgroundColor="White">
+          <cv:CarouselViewControl ItemsSource="{Binding Images}"
+                x:Name="carouselSlider" 
+                HeightRequest="200"
+                BackgroundColor="#20C6BA"
+                HorizontalOptions="FillAndExpand"
+                IndicatorsTintColor="Aqua"
+                ShowIndicators="true">
+    <cv:CarouselViewControl.ItemTemplate>
+      <DataTemplate>
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+          </Grid.RowDefinitions>
+          <ffimageloading:CachedImage
+                                Grid.RowSpan="2"
+                                Aspect="AspectFit"
+                                Source="{Binding sliderPhoto}"
+                                >
+                                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="SliderImage_Tapped" />
+                </StackLayout.GestureRecognizers>
+                                </ffimageloading:CachedImage>
+          <!--<StackLayout Grid.Row="1" BackgroundColor="#80000000" Padding="12">
+            <Label TextColor="White" Text="{Binding Name}" FontSize="16" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+          </StackLayout>-->
+        </Grid>
+      </DataTemplate>
+    </cv:CarouselViewControl.ItemTemplate>
+  </cv:CarouselViewControl>
+            <control:ExtendedButton WidthRequest="160" 
+                BackgroundColor="Teal" Text="{i18n:Translate groupIntro}"
+            HorizontalOptions="Center"
+            BorderRadius="25"
+            TextColor="White"
+            Margin="0,-15,0,0"
+                Clicked="Handle_Clicked"/>
+            <StackLayout >
+             <StackLayout Orientation="Horizontal" Padding="25,25,25,15">
+             <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OfficeBearers_Tapped" />
+                </StackLayout.GestureRecognizers>
+                        <Image Source="office_bearers.png" Margin="0,0,15,0" VerticalOptions="Center" />
+                        <Label Text="Office Bearers"
+                VerticalTextAlignment="Center"
+                    TextColor="Teal"
+                    FontSize="Medium"
+                        FontAttributes="Bold"/>
+                        <Image Source="next_arrow.png" HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+               <BoxView HeightRequest="1" BackgroundColor="Silver"/>
+            </StackLayout>
+             <StackLayout Orientation="Horizontal" Padding="25,15,25,15">
+             <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Gallery_Tapped" />
+                </StackLayout.GestureRecognizers>
+                    <Image Source="gallery.png" Margin="0,0,15,0" VerticalOptions="Center" />
+                        <Label Text="{i18n:Translate gallery}"
+                VerticalTextAlignment="Center"
+                    TextColor="Teal"
+                    FontSize="Medium"
+                    FontAttributes="Bold"/>
+                        <Image Source="next_arrow.png" HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+               <BoxView HeightRequest="1" BackgroundColor="Silver"/>
+            <StackLayout Orientation="Horizontal" Padding="25,15,25,15">
+            <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Members_Tapped" />
+                </StackLayout.GestureRecognizers>
+                    <Image Source="members.png" Margin="0,0,15,0" VerticalOptions="Center" />
+                        <Label Text="{i18n:Translate members}"
+                VerticalTextAlignment="Center"
+                    TextColor="Teal"
+                    FontSize="Medium"
+                    FontAttributes="Bold"/>
+                        <Image Source="next_arrow.png" HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+               <BoxView HeightRequest="1" BackgroundColor="Silver"/>
+            <StackLayout Orientation="Horizontal" Padding="25,15,25,15">
+            <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="GroupInfo_Tapped" />
+                </StackLayout.GestureRecognizers>
+                    <Image Source="group_intro.png" Margin="0,0,15,0" VerticalOptions="Center" />
+                        <Label Text="{i18n:Translate circular}"
+                VerticalTextAlignment="Center"
+                    TextColor="Teal"
+                    FontSize="Medium"
+                    FontAttributes="Bold"/>
+                        <Image Source="next_arrow.png" HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+               <BoxView HeightRequest="1" BackgroundColor="Silver"/>
+            
+       </StackLayout>
+            </ScrollView>
+            </StackLayout>
+	
+</d:BaseContentPage>

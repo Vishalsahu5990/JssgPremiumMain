@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="MvvmTest.Views.NotificationsPage"
+    xmlns:i18n="clr-namespace:MvvmTest;assembly=MvvmTest"
+    xmlns:d="clr-namespace:MvvmTest.Views"
+    xmlns:control="clr-namespace:MvvmTest.CustomRenderer" 
+    xmlns:userControls="clr-namespace:MvvmTest.UserControls"
+        xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    BackgroundColor="#EBEBEB">
+	 <Grid>
+        <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+
+
+
+
+       
+    <StackLayout Spacing="0" HeightRequest="55" Grid.Row="0">
+        <StackLayout x:Name="BarStack" BackgroundColor="#20C6BA"
+            Orientation="Horizontal" Spacing="0" Padding="0,12,0,0">
+            <Grid Padding="0" Margin="0" HorizontalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="60" />
+                </Grid.ColumnDefinitions>
+                <control:ExtendedButton Grid.Column="0" 
+                   
+                    Clicked="Handle_Clicked"
+                    ContentLayout="Left,0" 
+                    FontSize="17" TextColor="White" 
+                    Image="menu"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="StartAndExpand" 
+                    HeightRequest="55"
+                    x:Name="btnMenu">
+
+                    <control:ExtendedButton.Margin>
+                     <OnPlatform x:TypeArguments="Thickness"
+                      iOS="15,0,0,0"
+                      />
+                    </control:ExtendedButton.Margin>
+                </control:ExtendedButton>
+                <Label Grid.Column="0" Grid.ColumnSpan="3" Text="{Binding PageTitle}" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" TextColor="White" VerticalOptions="Center" FontSize="18">
+                </Label>
+                <control:ExtendedButton Grid.Column="2"
+                    Image="home" ContentLayout="Right,0"
+                    HeightRequest="55"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="EndAndExpand" 
+                     FontAttributes="Bold" TextColor="White" Clicked="OnHomeClicked" 
+                    x:Name="btnHome">
+                     <control:ExtendedButton.Margin>
+                    <OnPlatform x:TypeArguments="Thickness"
+                      iOS="0,0,15,0"
+                      />
+                    </control:ExtendedButton.Margin>
+                </control:ExtendedButton>
+            </Grid>
+       </StackLayout>
+         </StackLayout>
+            
+        <ListView x:Name="listView"
+            HasUnevenRows="false"
+            RowHeight="70"
+                BackgroundColor="Transparent"
+                SeparatorVisibility="None" 
+            ItemsSource="{Binding NotificationList}"
+             VerticalOptions="FillAndExpand"  
+                Grid.Row="1">
+            <ListView.ItemTemplate>
+            <DataTemplate>
+            <ViewCell>
+                            <Frame  HasShadow="false"
+                                BackgroundColor="White"
+                                Margin="5"
+                            Padding="4">
+       <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+       <Image Source="notification_icon" 
+        VerticalOptions="CenterAndExpand"
+                  Margin="10,0,0,0" />
+                    <StackLayout Margin="10,0,0,0"  HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                    <Label Text="{Binding name}"
+                                        FontSize="16"
+                       LineBreakMode="TailTruncation" 
+                                    FontAttributes="Bold"
+                                    VerticalOptions="CenterAndExpand"/>
+                        <Label Text="{Binding addedOn}" 
+                                        FontSize="12"
+                        TextColor="Silver"
+                         VerticalOptions="CenterAndExpand"          />
+               
+
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+                        </ViewCell>
+                            
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+             <userControls:AdvertiseView 
+                Grid.Row="2"
+            VerticalOptions="EndAndExpand"/>
+        
+        </Grid>
+           
+       
+      
+</d:BaseContentPage>
