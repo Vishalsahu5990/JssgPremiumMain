@@ -72,7 +72,7 @@ namespace MvvmTest.iOS
             var DeviceToken = deviceToken.Description;
             if (!string.IsNullOrWhiteSpace(DeviceToken))
             {
-                DeviceToken = DeviceToken.Trim('<').Trim('>');
+                DeviceToken = DeviceToken.Trim('<').Trim('>').Trim(' ');
             }
 
             // Get previous device token

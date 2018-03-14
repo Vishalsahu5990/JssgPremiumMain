@@ -17,7 +17,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         
-    <userControls:CustomNavigationBar Grid.Row="0"/>       
+    <userControls:BackNavigationBar Grid.Row="0"/>       
       <StackLayout Grid.Row="1" Orientation="Vertical" Spacing="10" Padding="50,20,50,10">
      <Label 
             Text="{Binding MeetingName}"

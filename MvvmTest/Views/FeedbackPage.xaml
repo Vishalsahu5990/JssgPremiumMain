@@ -8,7 +8,7 @@
     xmlns:userControls="clr-namespace:MvvmTest.UserControls"
     BackgroundColor="#EBEBEB">
     <StackLayout>
-            <userControls:CustomNavigationBar
+            <userControls:BackNavigationBar
             />  
     <ScrollView>
     <StackLayout>

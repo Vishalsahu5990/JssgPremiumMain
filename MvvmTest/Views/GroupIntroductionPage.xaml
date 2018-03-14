@@ -7,7 +7,7 @@
     xmlns:control="clr-namespace:MvvmTest.CustomRenderer"
     xmlns:userControls="clr-namespace:MvvmTest.UserControls">
 	<StackLayout Spacing="0">
-    <userControls:CustomNavigationBar />  
+    <userControls:BackNavigationBar />  
          <ScrollView>
             <StackLayout>
       <StackLayout Orientation="Horizontal" Spacing="15" Padding="30,25,30,10">

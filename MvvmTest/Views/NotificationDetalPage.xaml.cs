@@ -15,34 +15,41 @@ namespace MvvmTest.Views
         string _type = "";
         string _memId = "";
         string _name = "";
+        string _event = "";
         NotificationDetailViewModel _viewModel = null;
-        public NotificationDetalPage(string memId,string type,string name=null)
+        public NotificationDetalPage(string memId,string type,string name=null,string evnt=null)
         {
             InitializeComponent();
             NavigationPage.SetHasBackButton(this, false);
             _type = type;
             _memId = memId;
             _name = name;
+            _event = evnt;
             Debug.WriteLine("#######################++++"+_memId);
             BindingContext = _viewModel = new NotificationDetailViewModel();
+            if(!_memId.Equals("0"))
             GetCircular();
+            else
+                lblName.Text = _name;
+
+            if (_event != "Anniversary" && _event != "Birthday")
+                imgGreeting.IsVisible = false;
         }
         void GetCircular()
         {
             //MvvmTest.Helpers.CommonHelpers.ShowAlert("circular");
 
-            List<MembersDetailsModel> circularList = null;
+            List<NotificationModel> circularList = null;
             Task.Factory.StartNew(() =>
             {
                 ISyncServices syncService = new SyncServices();
-                circularList = syncService.GetMemberDetails(_memId);
+                circularList = syncService.GetNotificationDetails(_memId);
 
             }).ContinueWith((obj) =>
             {
                 Device.BeginInvokeOnMainThread(() =>
                 {
-                    
-                    if (circularList != null)
+                   if (circularList != null)
                     {
                        
                         var memberDetails = circularList[0];
@@ -53,23 +60,31 @@ namespace MvvmTest.Views
 
                             if (_type.Equals("0"))
                             {
-                                lblName.Text = "HAPPY ANNIVERSARY " + name;
+                                lblName.Text = "HAPPY ANNIVERSARY " +Environment.NewLine+ name;
+                            }
+                            else if (_type.Equals("1"))
+                            {
+                                lblName.Text = "HAPPY BIRTHDAY " +Environment.NewLine+ name;
                             }
                             else
                             {
-                                lblName.Text = "HAPPY BIRTHDAY " + name;
+                                lblName.Text = _name;
                             }
                         }
                         else
                         {
                             if (_type.Equals("0"))
                             {
-                                lblName.Text = "HAPPY ANNIVERSARY " + memberDetails.memName;
+                                lblName.Text = "HAPPY ANNIVERSARY " +Environment.NewLine+ memberDetails.name;
                             }
+                            else if (_type.Equals("1"))
+                            {
+                                lblName.Text = "HAPPY BIRTHDAY " +Environment.NewLine+ memberDetails.name;
+                            } 
                             else
                             {
-                                lblName.Text = "HAPPY BIRTHDAY " + memberDetails.memName;
-                            }  
+                                lblName.Text = memberDetails.name; 
+                            }
                         }
 
                        

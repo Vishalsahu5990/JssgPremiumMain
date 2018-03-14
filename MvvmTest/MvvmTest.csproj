@@ -164,6 +164,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\BackNavigationBar.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -317,6 +321,9 @@
     <Compile Include="ViewModel\NotificationDetailViewModel.cs" />
     <Compile Include="Popups\GalleryPopupPage.xaml.cs">
       <DependentUpon>GalleryPopupPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\BackNavigationBar.xaml.cs">
+      <DependentUpon>BackNavigationBar.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

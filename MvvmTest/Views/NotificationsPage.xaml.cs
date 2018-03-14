@@ -30,40 +30,41 @@ namespace MvvmTest.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            listView.ItemTapped+= (sender, e) => 
-            {
-                if (e.Item == null)
+            listView.ItemTapped+= ListView_ItemTapped; 
+
+        }
+        protected override void OnDisappearing()
+        {
+            listView.ItemTapped -= ListView_ItemTapped;
+            base.OnDisappearing();
+           
+        }
+
+        void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            if (e.Item == null)
                     return;
                 
                 var model = e.Item as NotificationModel;
                 if (!string.IsNullOrEmpty(model.memID) && !string.IsNullOrEmpty(model.type))
-                    Navigation.PushAsync(new NotificationDetalPage(model.memID, model.type,model.name));
+                Navigation.PushAsync(new NotificationDetalPage(model.memID, model.type,model.name,model.@event));
                 else
-                    ((ListView)sender).SelectedItem = null;               
-            };
-        }
-        protected override void OnDisappearing()
-        {
-            base.OnDisappearing();
-            //if(fromNotification)
-            //{
-            //    if (Device.OS == TargetPlatform.iOS)
-            //    {
-
-            //        App.Current.MainPage = new NavigationPage(new Views.MainPage());
-            //    }
-            //    else
-            //    {
-            //        CommonHelpers.IsAutologin = true;
-            //        //MainPage = new Views.MainPage();
-            //        App.Current.MainPage = new NavigationPage(new Views.TestPage());
-            //    }
-            //}
+                    ((ListView)sender).SelectedItem = null; 
         }
 
         void Handle_Clicked(object sender, System.EventArgs e)
         {
-            MessagingCenter.Send<object>(this, "OpenMenu");
+            if (Navigation.NavigationStack.Count > 1)
+            {
+                Navigation.PopAsync();
+               
+            }
+            else
+            {
+               
+                App.Current.MainPage = new NavigationPage(new MainPage());
+            }
+            //MessagingCenter.Send<object>(this, "OpenMenu");
         }
         void OnHomeClicked(object sender, System.EventArgs e)
         {

@@ -33,5 +33,6 @@ namespace MvvmTest.Services
         bool SendFeedback(string subj, string sugestion);
         bool ForgotPassword(string mobileNo);
         List<NotificationModel> GetAllNotification();
+        List<NotificationModel> GetNotificationDetails(string memId);
     }
 }

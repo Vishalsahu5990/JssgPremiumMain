@@ -31,7 +31,7 @@ namespace DataAccessLayer.Helper
         public static string GetGalleryDetails = "galleryDetails";
         public static string forgotPassword = "forgotPassword";
         public static string getAllNotification = "getAllNotification";
-
+        public static string getNotificationDetails = "notificationDetails";
 
 
     }

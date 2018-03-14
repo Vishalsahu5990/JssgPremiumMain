@@ -13,7 +13,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         
-        <userControls:CustomNavigationBar 
+        <userControls:BackNavigationBar 
             Grid.Row="0"
         HomeClicked="Handle_OnHomeClicked" MenuClicked="Handle_OnMenuClicked"/>
         <flv:FlowListView Grid.Row="1" 

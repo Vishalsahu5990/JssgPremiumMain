@@ -34,7 +34,7 @@
                     Clicked="Handle_Clicked"
                     ContentLayout="Left,0" 
                     FontSize="17" TextColor="White" 
-                    Image="menu"
+                    Image="back"
                     BackgroundColor="Transparent"
                     HorizontalOptions="StartAndExpand" 
                     HeightRequest="55"

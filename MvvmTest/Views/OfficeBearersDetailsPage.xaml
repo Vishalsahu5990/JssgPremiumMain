@@ -8,7 +8,7 @@
     xmlns:userControls="clr-namespace:MvvmTest.UserControls"
        xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
 	<StackLayout Spacing="0">
-    <userControls:CustomNavigationBar />  
+    <userControls:BackNavigationBar />  
          <ScrollView>
             <StackLayout>
       <StackLayout Orientation="Vertical" Spacing="10" Padding="50,25,50,0">

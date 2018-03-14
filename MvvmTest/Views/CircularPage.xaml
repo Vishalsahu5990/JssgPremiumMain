@@ -13,7 +13,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/> 
         </Grid.RowDefinitions>
-        <userControls:CustomNavigationBar Grid.Row="0"/>
+        <userControls:BackNavigationBar Grid.Row="0"/>
 
          <ListView Grid.Row="1" x:Name="listView" HasUnevenRows="true"
             Margin="10"

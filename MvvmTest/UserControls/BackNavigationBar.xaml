@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="MvvmTest.UserControls.BackNavigationBar"
+     xmlns:control="clr-namespace:MvvmTest.CustomRenderer">
+	<Grid.RowDefinitions>
+        <RowDefinition Height="55" />
+    </Grid.RowDefinitions>
+    <StackLayout Spacing="0">
+        <StackLayout x:Name="BarStack" BackgroundColor="#20C6BA"
+            Orientation="Horizontal" Spacing="0" Padding="0,12,0,0">
+            <Grid Padding="0" Margin="0" HorizontalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="60" />
+                </Grid.ColumnDefinitions>
+                <control:ExtendedButton Grid.Column="0" 
+                   
+                    Clicked="OnMenuClicked"
+                    ContentLayout="Left,0" 
+                    FontSize="17" TextColor="White" 
+                    Image="back"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="StartAndExpand" 
+                    HeightRequest="55"
+                    x:Name="btnMenu">
+
+                    <control:ExtendedButton.Margin>
+                     <OnPlatform x:TypeArguments="Thickness"
+                      iOS="15,0,0,0"
+                      />
+                    </control:ExtendedButton.Margin>
+                </control:ExtendedButton>
+                <Label Grid.Column="0" Grid.ColumnSpan="3" Text="{Binding PageTitle}" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" TextColor="White" VerticalOptions="Center" FontSize="18">
+                </Label>
+                <control:ExtendedButton Grid.Column="2"
+                    Image="home" ContentLayout="Right,0"
+                    HeightRequest="55"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="EndAndExpand" 
+                     FontAttributes="Bold" TextColor="White" Clicked="OnHomeClicked" 
+                    x:Name="btnHome">
+                     <control:ExtendedButton.Margin>
+                    <OnPlatform x:TypeArguments="Thickness"
+                      iOS="0,0,15,0"
+                      />
+                    </control:ExtendedButton.Margin>
+                </control:ExtendedButton>
+            </Grid>
+        </StackLayout>
+         </StackLayout>
+</Grid>

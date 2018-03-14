@@ -17,7 +17,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <userControls:CustomNavigationBar/>
+        <userControls:BackNavigationBar/>
         <SearchBar Grid.Row="1" BackgroundColor="#EBEBEB"
             TextColor="Black"
         CancelButtonColor="#909090"

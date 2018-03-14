@@ -1130,5 +1130,50 @@ namespace MvvmTest.Services
           
             return ret;
         }
+
+        public List<NotificationModel> GetNotificationDetails(string memId)
+        {
+            CommonHelpers.ShowLoader();
+            string url = URL.APIBaseAddress;
+            HttpResponseMessage response = null;
+            List<NotificationModel> ret = null;
+            JObject j = new JObject();
+            j.Add("method", URL.getNotificationDetails);
+            j.Add("memId",memId);
+            try
+            {
+                var json = JsonConvert.SerializeObject(j);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                response = client.PostAsync(url, content).Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    using (StreamReader reader = new StreamReader(response.Content.ReadAsStreamAsync().Result))
+                    {
+                        var contents = reader.ReadToEnd();
+                        JObject jObj = JObject.Parse(contents);
+
+                        var status = jObj["status"].ToString();
+
+                        if (status.Equals("200"))
+                        {
+                            ret = jObj["result"].ToObject<List<NotificationModel>>();
+
+                        }
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                CommonHelpers.DismissLoader();
+            }
+
+
+            return ret;
+        }
     }
 }

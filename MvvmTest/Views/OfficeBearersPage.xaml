@@ -16,7 +16,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-            <userControls:CustomNavigationBar
+            <userControls:BackNavigationBar
             Grid.Row="0"
             />       
       

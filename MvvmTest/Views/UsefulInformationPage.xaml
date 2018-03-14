@@ -15,7 +15,7 @@
             <RowDefinition Height="70"/>
         </Grid.RowDefinitions>
         
-        <userControls:CustomNavigationBar 
+        <userControls:BackNavigationBar 
             Grid.Row="0"
        />
        <StackLayout BackgroundColor="#20CBC2" 

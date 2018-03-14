@@ -5,7 +5,7 @@
      xmlns:d="clr-namespace:MvvmTest.Views"
     xmlns:userControls="clr-namespace:MvvmTest.UserControls">
 	<StackLayout Spacing="0" BackgroundColor="#EBEBEB">
-       <userControls:CustomNavigationBar />       
+       <userControls:BackNavigationBar />       
 
             <ListView x:Name="listView"
             HasUnevenRows="true"
