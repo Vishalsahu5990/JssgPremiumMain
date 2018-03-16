@@ -50,7 +50,7 @@ namespace MvvmTest.ViewModel
                                          .Select(x => x).ToList();
                             foreach (var item in sorted)
                             {
-                                var convertedTime = Convert.ToDateTime(item.added_on);
+                                var convertedTime = DateTime.ParseExact(item.added_on, "dd-MM-yyyy", null);
                                 var time = convertedTime.ToString("D") + " | " + convertedTime.DayOfWeek;
                                 item.added_on = time;
                                 NewsList.Add(item);

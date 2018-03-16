@@ -21,7 +21,9 @@ namespace MvvmTest.Views
                 if (e.Item == null) return;
 
                 var model = e.Item as GalleryModel;
-                Navigation.PushPopupAsync(new Popups.GalleryPopupPage(model.galleryPhoto));
+               // Navigation.PushPopupAsync(new Popups.GalleryPopupPage(model.galleryPhoto));
+                Navigation.PushAsync(new GalleryImageViewPage(model.galleryPhoto));
+
             };
         }
     }

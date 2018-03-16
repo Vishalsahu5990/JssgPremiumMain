@@ -7,9 +7,15 @@
     xmlns:control="clr-namespace:MvvmTest.CustomRenderer"
     xmlns:userControls="clr-namespace:MvvmTest.UserControls"
        xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
-	<StackLayout Spacing="0">
-    <userControls:BackNavigationBar />  
-         <ScrollView>
+     <Grid>
+        <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+	
+    <userControls:BackNavigationBar Grid.Row="0"/>  
+         <ScrollView Grid.Row="1">
             <StackLayout>
       <StackLayout Orientation="Vertical" Spacing="10" Padding="50,25,50,0">
       <ffimageloading:CachedImage Source="{Binding BearPhoto}"
@@ -39,6 +45,7 @@
                 </StackLayout>
         </ScrollView>
        
-        <userControls:AdvertiseView VerticalOptions="EndAndExpand"/>
-    </StackLayout>
+        <userControls:AdvertiseView VerticalOptions="EndAndExpand" Grid.Row="2"/>
+    
+          </Grid>
 </d:BaseContentPage>

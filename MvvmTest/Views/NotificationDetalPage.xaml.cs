@@ -30,7 +30,12 @@ namespace MvvmTest.Views
             if(!_memId.Equals("0"))
             GetCircular();
             else
-                lblName.Text = _name;
+            {
+                lblName.Text = _event;
+                imgMember.IsVisible = false;
+                imgGreeting.IsVisible = false;
+            }
+                
 
             if (_event != "Anniversary" && _event != "Birthday")
                 imgGreeting.IsVisible = false;
@@ -68,7 +73,7 @@ namespace MvvmTest.Views
                             }
                             else
                             {
-                                lblName.Text = _name;
+                                lblName.Text = _event;
                             }
                         }
                         else
@@ -83,7 +88,7 @@ namespace MvvmTest.Views
                             } 
                             else
                             {
-                                lblName.Text = memberDetails.name; 
+                                lblName.Text = memberDetails.@event; 
                             }
                         }
 

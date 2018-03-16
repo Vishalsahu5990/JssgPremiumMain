@@ -168,6 +168,10 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\GalleryImageViewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -325,6 +329,10 @@
     <Compile Include="UserControls\BackNavigationBar.xaml.cs">
       <DependentUpon>BackNavigationBar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\GalleryImageViewPage.xaml.cs">
+      <DependentUpon>GalleryImageViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\GalleryImageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="DLToolkit.Forms.Controls.FlowListView">

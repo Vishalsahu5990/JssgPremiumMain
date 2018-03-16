@@ -43,10 +43,11 @@ namespace MvvmTest.ViewModel
                 {
                     if (bearersList != null)
                         foreach (var item in bearersList)
-                        {
-                            var convertedTime = Convert.ToDateTime(item.added_on);
-                            var time = convertedTime.ToString("D") + " | " + convertedTime.DayOfWeek;
-                            item.added_on = time;
+                    {
+                           
+                        var date =  DateTime.ParseExact(item.added_on, "dd-MM-yyyy", null);
+                        var time = date.ToString("D") + " | " + date.DayOfWeek;
+                        item.added_on = time;
                         UpdatesList.Add(item);
                         }
 
